@@ -1,0 +1,5 @@
+server:
+  port: 5011
+spring:
+  application:
+    name: webserver
