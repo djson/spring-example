@@ -1,5 +1,8 @@
 server:
-    port: ${service_port:5001}
+  port: ${service_port:5001}
 spring:
-    application:
-        name: webclient
+  mvc:
+    converters:
+      preferred-json-mapper: gson
+  application:
+    name: webclient

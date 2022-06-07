@@ -1,21 +1,20 @@
 package com.springcloud.webclient;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.time.Duration;
-import java.util.HashMap;
-
-import com.springcloud.webclient.httpClient.httpWebClient;
-import com.springcloud.webclient.httpClient.xml;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.ClientRequest;
 import org.springframework.web.reactive.function.client.ExchangeFilterFunction;
 import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import com.springcloud.webclient.httpClient.getXmlDataExample;
+import com.springcloud.webclient.httpClient.httpWebClient;
 
 import io.netty.channel.ChannelOption;
 import io.netty.channel.epoll.EpollChannelOption;
@@ -124,23 +123,27 @@ public class WebClientController {
                                 .retrieve().bodyToMono(String.class);
         }
 
-        @GetMapping("/test5")
-        public void doTest5() {
-                HashMap<String, String> parameter = new HashMap<String, String>();
-                try {
-                        parameter.put("ServiceKey",
-                                        "zUvO72slCykSeT84dIr2RNZ6%2BSgtcDses4UJlMaYyvAI9Gk6ncwTcvB4WQgvfjOjJb6KSOMhExBSZQ6xsR%2FDcg%3D%3D");
-                        parameter.put("pageNo", URLEncoder.encode("1", "UTF-8"));
-                        parameter.put("numOfRows", URLEncoder.encode("100", "UTF-8"));
-                        parameter.put("solYear", URLEncoder.encode("2022", "UTF-8"));
-                        parameter.put("solMonth", URLEncoder.encode("06", "UTF-8"));
-                } catch (UnsupportedEncodingException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                }
-                Mono<xml> xml = httpWebClient.conn("http://apis.data.go.kr",
-                                "/B090041/openapi/service/SpcdeInfoService/getRestDeInfo", parameter);
-                xml.subscribe(result -> System.out.println(result));
+        /**
+         * Json Data Example
+         * 
+         * @return
+         */
+        @GetMapping("/getJsonExample")
+        public String doTest6() {
+                MultiValueMap<String, String> parameter = new LinkedMultiValueMap<String, String>();
+                return httpWebClient.getResponseJSON("http://localhost:5011",
+                                "/getJson", parameter);
+        }
 
+        /**
+         * XML Data Example
+         * 
+         * @return
+         */
+        @GetMapping("/getXmlExample")
+        public Mono<getXmlDataExample> doTest7() {
+                MultiValueMap<String, String> parameter = new LinkedMultiValueMap<String, String>();
+                return httpWebClient.getResponseXML("http://localhost:5011",
+                                "/getXml", parameter);
         }
 }
