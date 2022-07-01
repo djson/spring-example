@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch httpUtil",
+            "request": "launch",
+            "mainClass": "com.springcloud.webclient.httpClient.httpUtil",
+            "projectName": "webclient"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-WebserverApplication<webserver>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
