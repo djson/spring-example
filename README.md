@@ -10,4 +10,4 @@
 - FileUpload
     - SpringBoot File Upload Example
 - SampleProject
-    - 2.7.3 Gradle Proejct
+    - 2.7.3 Gradle Proejct Template
