@@ -21,30 +21,21 @@ public class ApiDataService {
     userRepo repo;
 
     public List<DataJsonClass> getData1(HashMap<String, Object> param) {
-        try {
-            return repo.getList(param);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+        return repo.getList(param);
     }
 
     public String getData2(HashMap<String, Object> param) {
         JsonArray ja = new JsonArray();
         List<DataJsonClass> list = repo.getList(param);
-        try {
-            for (int i = 0; i <= list.size(); i++) {
-                JsonObject jo = new JsonObject();
-                jo.addProperty("userId", list.get(i).getUserId());
-                jo.addProperty("userName", list.get(i).getUserName());
-                jo.addProperty("userEmail", list.get(i).getUserEmail());
-                jo.addProperty("userAge", list.get(i).getUserAge());
-                jo.addProperty("userAddress", list.get(i).getUserAddress());
-                jo.addProperty("userEnterDate", list.get(i).getUserEnterDate().toString());
-                ja.add(jo);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (int i = 0; i <= list.size(); i++) {
+            JsonObject jo = new JsonObject();
+            jo.addProperty("userId", list.get(i).getUserId());
+            jo.addProperty("userName", list.get(i).getUserName());
+            jo.addProperty("userEmail", list.get(i).getUserEmail());
+            jo.addProperty("userAge", list.get(i).getUserAge());
+            jo.addProperty("userAddress", list.get(i).getUserAddress());
+            jo.addProperty("userEnterDate", list.get(i).getUserEnterDate().toString());
+            ja.add(jo);
         }
         return ja.toString();
     }

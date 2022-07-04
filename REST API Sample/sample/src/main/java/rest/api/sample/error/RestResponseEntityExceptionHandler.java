@@ -28,9 +28,9 @@ public class RestResponseEntityExceptionHandler extends DefaultErrorAttributes {
             WebRequest webRequest, ErrorAttributeOptions options) {
         Map<String, Object> errorAttributes = super.getErrorAttributes(webRequest, options);
         errorAttributes.put("result_status", "fail");
-        errorAttributes.put("result_code", errorAttributes.get("status"));
+        errorAttributes.put("result_code", Integer.parseInt(errorAttributes.get("status").toString()));
         errorAttributes.put("result_message", "NOT ACCEPTED");
-        errorAttributes.put("response", null);
+        errorAttributes.put("result", null);
         errorAttributes.remove("timestamp");
         errorAttributes.remove("status");
         errorAttributes.remove("message");
