@@ -21,6 +21,6 @@ public class ApiResFormat {
         this.result_status = status;
         this.result_code = resultCode;
         this.result_message = resultMessage;
-        result.put("result", resultObj);
+        result.put("data", resultObj);
     }
 }

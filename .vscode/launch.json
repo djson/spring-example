@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch SampleApplication",
+            "request": "launch",
+            "mainClass": "rest.api.sample.SampleApplication",
+            "projectName": "sample"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-WebserverApplication<webserver>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
