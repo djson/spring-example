@@ -41,3 +41,4 @@ others recommend things
 - authorize policy (keym token ...)
 - documentation and test guide
 
+* response 내에 request 정보 같이 담아서 리턴하기
