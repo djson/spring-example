@@ -27,8 +27,6 @@ public class UserController {
     @GetMapping(value = "/users", produces = "application/json; charset=utf8")
     public ResponseEntity<ApiResFormat> getUsers(HttpServletRequest request,
             @RequestParam HashMap<String, Object> param) {
-        System.out.println("File: UserController.java ~ line: (29)  ---> param: " + param);
-        System.out.println("get get users");
         return new ResponseEntity<ApiResFormat>(new ApiResFormat("success", "200", "요청에 성공하였습니다.", a.getData1(param)),
                 HttpStatus.OK);
     }
@@ -37,7 +35,7 @@ public class UserController {
     public ResponseEntity<ApiResFormat> postUsers(HttpServletRequest request,
             @RequestBody HashMap<String, Object> param) {
         System.out.println("post get users");
-        return new ResponseEntity<ApiResFormat>(new ApiResFormat("success", "200", "요청에 성공하였습니다.", a.getData2()),
+        return new ResponseEntity<ApiResFormat>(new ApiResFormat("success", "200", "요청에 성공하였습니다.", a.getData2(param)),
                 HttpStatus.OK);
     }
 

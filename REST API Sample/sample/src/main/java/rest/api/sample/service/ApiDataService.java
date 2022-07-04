@@ -5,50 +5,42 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import rest.api.sample.data.DataJsonClass;
+import rest.api.sample.repository.userRepo;
 
 @Service
 public class ApiDataService {
 
+    @Autowired
+    userRepo repo;
+
     public List<DataJsonClass> getData1(HashMap<String, Object> param) {
-        System.out.println(
-                "File: ApiDataService.java ~ line: (18) ~ function: List<DataJsonClass>getData1 ---> param: " + param);
-        Date date = new Date();
-        List<DataJsonClass> result = new ArrayList<DataJsonClass>();
         try {
-            for (int i = 1; i <= 100; i++) {
-                DataJsonClass d = new DataJsonClass();
-                d.setUserId("user" + i);
-                d.setUserName("유저" + i);
-                d.setUserEmail("user" + i + "@user.net");
-                d.setUserAge(10 * i);
-                d.setUserAddress("서울시 낙원구 행복동 " + i + "길 ");
-                d.setUserEnterDate(date);
-                result.add(d);
-            }
+            return repo.getList(param);
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
-        return result;
     }
 
-    public String getData2() {
-        Date date = new Date();
+    public String getData2(HashMap<String, Object> param) {
         JsonArray ja = new JsonArray();
+        List<DataJsonClass> list = repo.getList(param);
         try {
-            for (int i = 1; i <= 100; i++) {
+            for (int i = 0; i <= list.size(); i++) {
                 JsonObject jo = new JsonObject();
-                jo.addProperty("userId", "user" + i);
-                jo.addProperty("userName", "유저" + i);
-                jo.addProperty("userEmail", "user" + i + "@user.net");
-                jo.addProperty("userAge", 10 * i);
-                jo.addProperty("userAddress", "서울시 낙원구 행복동 " + i + "길 ");
-                jo.addProperty("userEnterDate", date.toString());
+                jo.addProperty("userId", list.get(i).getUserId());
+                jo.addProperty("userName", list.get(i).getUserName());
+                jo.addProperty("userEmail", list.get(i).getUserEmail());
+                jo.addProperty("userAge", list.get(i).getUserAge());
+                jo.addProperty("userAddress", list.get(i).getUserAddress());
+                jo.addProperty("userEnterDate", list.get(i).getUserEnterDate().toString());
                 ja.add(jo);
             }
         } catch (Exception e) {
