@@ -7,10 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,12 +16,25 @@ import org.springframework.web.bind.annotation.RestController;
 import rest.api.sample.response.ApiResFormat;
 import rest.api.sample.service.ApiDataService;
 
+/**
+ * @apiNote Api Controller Sample
+ * @version 1.0
+ * @author DK
+ * @since 2022.07
+ */
 @RestController
 public class UserController {
 
     @Autowired
     ApiDataService a;
 
+    /**
+     * get users data
+     * 
+     * @param request
+     * @param param
+     * @return
+     */
     @GetMapping(value = "/users", produces = "application/json; charset=utf8")
     public ResponseEntity<ApiResFormat> getUsers(HttpServletRequest request,
             @RequestParam HashMap<String, Object> param) {
@@ -31,6 +42,13 @@ public class UserController {
                 HttpStatus.OK);
     }
 
+    /**
+     * post users data
+     * 
+     * @param request
+     * @param param
+     * @return
+     */
     @PostMapping(value = "/users", produces = "application/json; charset=utf8")
     public ResponseEntity<ApiResFormat> postUsers(HttpServletRequest request,
             @RequestBody HashMap<String, Object> param) {
@@ -39,13 +57,18 @@ public class UserController {
                 HttpStatus.OK);
     }
 
-    @PutMapping(value = "/users/save", produces = "application/json; charset=utf8")
-    public void updateUsers() {
-        System.out.println("put save users");
-    }
-
-    @DeleteMapping(value = "/users/delete", produces = "application/json; charset=utf8")
-    public void deleteUsers() {
-        System.out.println("delete del users");
-    }
+    /* unused */
+    /*
+     * @PutMapping(value = "/users/save", produces =
+     * "application/json; charset=utf8")
+     * public void updateUsers() {
+     * System.out.println("put save users");
+     * }
+     * 
+     * @DeleteMapping(value = "/users/delete", produces =
+     * "application/json; charset=utf8")
+     * public void deleteUsers() {
+     * System.out.println("delete del users");
+     * }
+     */
 }

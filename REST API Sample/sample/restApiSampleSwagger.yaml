@@ -1,0 +1,179 @@
+openapi: 3.0.1
+info:
+  title: REST API Sample
+  description: this is sample of REST API
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: eoen012@gmail.com
+  license:
+    name: Lim
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: http://localhost:8080
+  description: localhost
+
+
+tags:
+- name: users
+  description: Get Members Data
+  
+paths:
+  /users:
+    post:
+      tags:
+      - users
+      summary: Return Members Data
+      operationId: users_post
+      #parameters:
+      #requestBody:
+        #description: get members data with this parameter
+        #content:
+          #application/json:
+            #schema:
+              #$ref: '#/components/schemas/req'
+        #required: true
+      responses:
+        200:
+          description: request success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/res'
+        4XX:
+          description: Invalid URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/res_fail'
+        5XX:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/res_fail'
+      #security:
+      #  - apiKey: ["6fc2d7881049ed133d9a5c911cc4d612e0df7ff51b85c92d928b2a3ba5ce5845"]
+      x-request-charset: utf8
+    
+    get:
+      tags:
+      - users
+      summary: Return Members Data
+      operationId: users_get
+      #parameters:
+      #requestBody:
+        #description: get members data with this parameter
+        #content:
+          #application/json:
+            #schema:
+              #$ref: '#/components/schemas/req'
+        #required: true
+      responses:
+        200:
+          description: request success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/res'
+        4XX:
+          description: Invalid URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/res_fail'
+        5XX:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/res_fail'
+      #security:
+      #  - apiKey: ["6fc2d7881049ed133d9a5c911cc4d612e0df7ff51b85c92d928b2a3ba5ce5845"]
+      x-request-charset: utf8
+
+components:
+  schemas:
+    req:
+      type: object
+      #required:
+        #- type
+        #- recvNum
+        #- contents
+      #properties:
+        #type:
+        #  type: string
+        #  description: SMS 또는 MMS 타입 지정
+        #  example: "SMS"
+        #recvNum:
+        #  type: string
+        #  description: SMS 또는 MMS를 수신받을 사람의 핸드폰 번호
+        #  example: "01012341234"
+        #contents:
+        #  type: string
+        #  description: SMS 또는 MMS로 전달할 내용(컨텐츠)
+        #  example: "SMS 전송 테스트 입니다."
+        #mmsTitle:
+        #  type: string
+        #  description: MMS 전송 시, 메세지 타이틀
+        #  example: "MMS 타이틀 입니다."
+    
+    res:
+      type: object
+      properties:
+        result_status:
+          type: string
+          description: fail / success
+          example: "success"
+        result_code:
+          type: integer
+          description: status code
+          example: 200
+        result_message:
+          type: string
+          description: message
+          example: "요청에 성공하였습니다."
+        result:
+          type: object
+          description: result data
+          example: {
+            "data":"..."
+          }
+    
+    res_fail:
+      type: object
+      properties:
+        result_status:
+          type: string
+          description: fail / success
+          example: "fail"
+        result_code:
+          type: integer
+          description: status code
+          example: 400
+        result_message:
+          type: string
+          description: message
+          example: "요청에 실패하였습니다."
+        result:
+          type: object
+          description: result data
+          example: {
+            "data":null
+          }
+        
+        
+      
+          
+  #securitySchemes:
+  #    apiKey:
+  #      type: apiKey
+  #      name: apiKey
+  #      in: header          
+          
+          
+          
+          
+          

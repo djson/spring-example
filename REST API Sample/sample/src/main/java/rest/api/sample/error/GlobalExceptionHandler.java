@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import rest.api.sample.response.ApiResFormat;
 
+/**
+ * @apiNote GlobalExceptionHandler -> 실제 서비스에서 예외처리 될 시 핸들링(공통 포맷)
+ * @version 1.0
+ * @author DK
+ * @since 2020.07
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler extends RuntimeException {
 

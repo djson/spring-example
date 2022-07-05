@@ -4,6 +4,6 @@
 
 <mapper namespace="rest.api.sample.repository.userRepo">
     <select id="getList" parameterType="HashMap" resultType="DataJsonClass">
-        selec from members
+        select * from members
     </select>
 </mapper>

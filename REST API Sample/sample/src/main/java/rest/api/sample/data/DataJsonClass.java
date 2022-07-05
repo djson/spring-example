@@ -8,6 +8,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Return Data Sample Class
+ */
 @Getter
 @Setter
 /* null이 아닌것만 return */

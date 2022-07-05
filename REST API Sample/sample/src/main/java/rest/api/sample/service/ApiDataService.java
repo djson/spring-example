@@ -1,7 +1,5 @@
 package rest.api.sample.service;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,6 +12,12 @@ import com.google.gson.JsonObject;
 import rest.api.sample.data.DataJsonClass;
 import rest.api.sample.repository.userRepo;
 
+/**
+ * @apiNote Service Sample
+ * @version 1.0
+ * @author DK
+ * @since 2022.07
+ */
 @Service
 public class ApiDataService {
 
