@@ -31,7 +31,7 @@ public class ApiDataService {
     public String getData2(HashMap<String, Object> param) {
         JsonArray ja = new JsonArray();
         List<DataJsonClass> list = repo.getList(param);
-        for (int i = 0; i <= list.size(); i++) {
+        for (int i = 0; i < list.size(); i++) {
             JsonObject jo = new JsonObject();
             jo.addProperty("userId", list.get(i).getUserId());
             jo.addProperty("userName", list.get(i).getUserName());
