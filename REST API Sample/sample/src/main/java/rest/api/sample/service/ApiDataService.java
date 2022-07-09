@@ -1,5 +1,6 @@
 package rest.api.sample.service;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,13 +25,25 @@ public class ApiDataService {
     @Autowired
     userRepo repo;
 
-    public List<DataJsonClass> getData1(HashMap<String, Object> param) {
-        return repo.getList(param);
+    public List<DataJsonClass> getV1(HashMap<String, Object> param) {
+        List<String> field = Arrays.asList(param.get("field").toString().split(","));
+        for (String x : field) {
+            param.put(x, true);
+        }
+        return repo.getV1(param);
+    }
+
+    public List<DataJsonClass> getV2(HashMap<String, Object> param) {
+        List<String> field = Arrays.asList(param.get("field").toString().split(","));
+        for (String x : field) {
+            param.put(x, true);
+        }
+        return repo.getV2(param);
     }
 
     public String getData2(HashMap<String, Object> param) {
         JsonArray ja = new JsonArray();
-        List<DataJsonClass> list = repo.getList(param);
+        List<DataJsonClass> list = repo.getV1(param);
         for (int i = 0; i < list.size(); i++) {
             JsonObject jo = new JsonObject();
             jo.addProperty("userId", list.get(i).getUserId());

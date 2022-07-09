@@ -34,13 +34,13 @@
     - api.apiserver.com/users -> users.apiserver.com
     - api.apiserver.com/car -> car.apiserver.com
 
-others recommend things
-- use http protocol
-- use standard json library
-- make short response time as you can
-- authorize policy (keym token ...)
-- documentation and test guide
+- others recommend things
+    - use http protocol
+    - use standard json library
+    - make short response time as you can
+    - authorize policy (keym token ...)
+    - documentation and test guide
 
-- ToDo
-* response 내에 request 정보 같이 담아서 리턴하기
-* swagger 정의 하기
+- what is next ?
+    * response 내에 request 정보 같이 담아서 리턴하기
+    * 버저닝, 필터링 고도화

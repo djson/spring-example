@@ -20,7 +20,7 @@ public class DataJsonClass {
     private String userId;
     private String userName;
     private String userEmail;
-    private int userAge;
+    private String userAge;
     private String userAddress;
     /* date format 고정 */
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")

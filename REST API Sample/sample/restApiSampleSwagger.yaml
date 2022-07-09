@@ -58,12 +58,25 @@ paths:
       #  - apiKey: ["6fc2d7881049ed133d9a5c911cc4d612e0df7ff51b85c92d928b2a3ba5ce5845"]
       x-request-charset: utf8
     
+  /users/{version}/get:
     get:
       tags:
       - users
       summary: Return Members Data
       operationId: users_get
-      #parameters:
+      parameters:
+        - in : path
+          name: version
+          required: true
+          schema:
+            type: string
+          description: users version
+        - in : query
+          name: field
+          required: false
+          schema:
+            type: string
+          description: what you want to return fields ( id, name, email, age, address )
       #requestBody:
         #description: get members data with this parameter
         #content:

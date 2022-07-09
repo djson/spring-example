@@ -15,5 +15,8 @@ import rest.api.sample.data.DataJsonClass;
  */
 @Repository
 public interface userRepo {
-    public List<DataJsonClass> getList(HashMap<String, Object> param);
+
+    public List<DataJsonClass> getV1(HashMap<String, Object> param);
+
+    public List<DataJsonClass> getV2(HashMap<String, Object> param);
 }
