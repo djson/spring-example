@@ -18,3 +18,5 @@
     - 2.7.3 Gradle Proejct Template
 - SpringCloud
     - Web Client & Server Simple Template
+- Swagger
+    - Swagger 3.0 & Spring Boot 2.7.1 Gradle Sample
