@@ -33,8 +33,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public class ApiController {
 
     @Tag(name = "user")
-    @ApiOperation(value = "유저 리스트", notes = "파라미터로 넘어온 수 만큼 유저를 리턴한다.", authorizations = {
-            @Authorization(value = "apiKey") })
+    @ApiOperation(value = "유저 리스트", notes = "파라미터로 넘어온 수 만큼 유저를 리턴한다.", authorizations = {@Authorization(value = "apiKey") })
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "요청 성공", content = @Content(schema = @Schema(implementation = ApiRes.class))),
             @ApiResponse(responseCode = "201", description = "500과 동일"),

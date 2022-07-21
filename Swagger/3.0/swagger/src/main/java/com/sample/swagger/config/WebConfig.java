@@ -9,12 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.sample.swagger.interceptor.ApiInterceptor;
 
-/**
- * @apiNote Web Config
- * @author dk
- * @since 2022.07.13
- * @version 1.0
- */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 

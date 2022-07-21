@@ -21,22 +21,20 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.ApiKey;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableWebMvc
-@EnableSwagger2
 @Configuration
 public class SwaggerConfig extends WebMvcConfigurationSupport {
 
     @Bean
     public Docket api(TypeResolver typeResolver) {
         return new Docket(DocumentationType.OAS_30)
-                // 실제 컨트롤러에서 리턴하지 않는 예제 클래스를 추가하고자 할 때.
+                // * 실제 에러 처리로 리턴하는 클래스를 명시하고자 할 때 해당 모델을 추가해준다.
                 .additionalModels(
                         typeResolver.resolve(ApiRes.class),
                         typeResolver.resolve(ApiErr.class),
                         typeResolver.resolve(ApiNoAuth.class))
-                // 멤버 변수 중, Date 관련 변수 문제로 인해 설정 추가
+                // * 스키마 멤버 변수 중, Date 관련 변수 문제로 인해 설정 추가
                 .directModelSubstitute(LocalDate.class, java.sql.Date.class)
                 .directModelSubstitute(LocalDateTime.class, java.util.Date.class)
                 .useDefaultResponseMessages(true)
