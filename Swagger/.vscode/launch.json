@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SwaggerApplication<swagger>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.sample.swagger.SwaggerApplication",
+            "projectName": "swagger",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
