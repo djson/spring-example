@@ -34,20 +34,27 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
                         typeResolver.resolve(ApiRes.class),
                         typeResolver.resolve(ApiErr.class),
                         typeResolver.resolve(ApiNoAuth.class))
-                // * 스키마 멤버 변수 중, Date 관련 변수 문제로 인해 설정 추가
+                // * 스키마 멤버 변수 중, Date 관련 변수 문제 방지를 위한 설정
                 .directModelSubstitute(LocalDate.class, java.sql.Date.class)
                 .directModelSubstitute(LocalDateTime.class, java.util.Date.class)
                 .useDefaultResponseMessages(true)
                 .apiInfo(apiInfo())
-                // 인증 토큰 방식이 있을때만 사용.
+                // * 인증 토큰 방식이 있을때만 사용.
                 // .securityContexts(Arrays.asList(securityContext()))
+                // * 인증 키 사용 등록.
                 .securitySchemes(Arrays.asList(apiKey()))
                 .select()
+                // * base package 설정
                 .apis(RequestHandlerSelectors.basePackage("com.sample.swagger.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
+    /**
+     * Swagger API 기본 정보 세팅
+     * 
+     * @return
+     */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Swagger 3.0 Api Sample")
@@ -77,6 +84,11 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
      * }
      */
 
+    /**
+     * API KEY 세팅
+     * 
+     * @return
+     */
     private ApiKey apiKey() {
         return new ApiKey("apiKey", "apiKey", "header");
     }
