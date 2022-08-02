@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sample.swagger.data.addUserRes;
 import com.sample.swagger.data.data;
-import com.sample.swagger.data.dataParam;
 import com.sample.swagger.data.deleteUserRes;
 import com.sample.swagger.data.getUserRes;
 import com.sample.swagger.data.updateUserRes;
