@@ -5,9 +5,9 @@
 - AsyncMethod
     - Async Method Settings 
 - CORS Allow
-    - Use Annotation -> SampleController.java
-    - Use WebConfig(global) -> WebConfig.java
-    - Use filter -> CorsFilter.java
+    - SampleController.java -> Use Annotation.
+    - WebConfig.java -> Use WebConfig(global).
+    - CorsFilter.java -> Use Filter.
 - DynamicDataSource
     - Multiple Data Source for Using Master/Slave JDBC Connection
 - FileUpload
