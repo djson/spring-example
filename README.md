@@ -12,6 +12,8 @@
     - Multiple Data Source for Using Master/Slave JDBC Connection
 - FileUpload
     - SpringBoot File Upload Example
+- H2 Database
+    - h2 database Example Project
 - REST API Sample
     - SpringBoot 2.7.1 Gradle Example
 - SampleProject
