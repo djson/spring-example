@@ -5,6 +5,11 @@ import org.springframework.transaction.support.TransactionSynchronizationManager
 
 public class SQLRoutingDataSource extends AbstractRoutingDataSource {
 
+    /**
+     * @apiNote Master/Slave 분기 처리용 클래스
+     * @Usage class/method 에 @Transactional(readOnly = true/false)
+     * @return
+     */
     @Override
     protected Object determineCurrentLookupKey() {
         boolean isReadOnly = TransactionSynchronizationManager.isCurrentTransactionReadOnly();

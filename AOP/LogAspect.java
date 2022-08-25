@@ -32,15 +32,15 @@ public class LogAspect {
      * 
      * [구조]
      * 1. * : 리턴 타입 지정 (*:anything | public string | ...)
-     * 2. com.acaas.admin.controller..*.* : 패키지 경로 및 메소드 명 등
+     * 2. com.example.controller..*.* : 패키지 경로 및 메소드 명 등
      * 3. (..) : 파라미터 타입
      * 
      * .. 더 많은 정보 : https://www.baeldung.com/spring-aop-pointcut-tutorial
      * 
-     * '!@annotation(com.acaas.admin.aspect.NoLogging)'
+     * '!@annotation(com.example.aspect.NoLogging)'
      * NoLogging 어노테이션이 붙은 메소드는 제외한다.
      */
-    @Pointcut("execution(* com.acaas.admin.controller..*.*(..)) && !@annotation(com.acaas.admin.aspect.NoLogging)")
+    @Pointcut("execution(* com.example.controller..*.*(..)) && !@annotation(com.example.aspect.NoLogging)")
     private void cut() {
     }
 

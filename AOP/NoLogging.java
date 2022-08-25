@@ -5,8 +5,7 @@ import java.lang.annotation.Target;
 
 /**
  * 
- * [DK][2022.04.08]
- * [AOP에서 로깅 처리 하지 않기 위한 예외처리 용 어노테이션 생성]
+ * AOP에서 로깅 처리 하지 않기 위한 예외처리 용 어노테이션 생성
  * 
  */
 @Target({ ElementType.TYPE, ElementType.METHOD })

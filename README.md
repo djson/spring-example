@@ -1,21 +1,23 @@
 # spring-example
 
 - AOP
-    - Log Aop
+    - LogAspect -> 메소드 실행 전/후로 로그를 남기기 위한 Log AOP 클래스
+    - NoLogging -> Log AOP 에서 특정 클래스/메소드에 AOP 미적용하기 위한 어노테이션 클래스
 - AsyncMethod
-    - Async Method Settings 
+    - AsyncConfig -> 비동기 처리를 위한 스레드 실행 계획 설정 클래스
 - CORS Allow
-    - SampleController.java -> Use Annotation.
-    - WebConfig.java -> Use WebConfig(global).
-    - CorsFilter.java -> Use Filter.
+    - SampleController -> 컨트롤러 레벨에서 CORS를 컨트롤하기 위한 설정 예시
+    - WebConfig -> SpringBoot Config 레벨에서 CORS를 컨트롤하기 위한 설정 예시
+    - CorsFilter -> Filter를 이용한 CORS 처리 예시
 - DynamicDataSource
-    - Multiple Data Source for Using Master/Slave JDBC Connection
+    - SQLConfig -> 마스터/슬레이브 데이터베이스 설정을 위한 멀티 데이터 소스 예시
+    - SQLRoutingDataSource -> 어노테이션을 통한 분기 처리용 클래스
 - FileUpload
     - SpringBoot File Upload Example
 - H2 Database
     - h2 database Example Project
 - REST API Sample
-    - SpringBoot 2.7.1 Gradle Example
+    - REST API SpringBoot 2.7.1 Gradle Example
 - SampleProject
     - 2.7.3 Gradle Proejct Template
 - SpringCloud
