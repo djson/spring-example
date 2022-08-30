@@ -8,6 +8,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
     </head>
     <body>
-        <tiles:insertAttribute name="CONTENT"/>
+        <div class="header">
+            <tiles:insertAttribute name="HEADER"/>
+        </div>
+        <div class="navigation">
+            <tiles:insertAttribute name="NAVIGATION"/>
+        </div>
+        <div class="content">
+            <tiles:insertAttribute name="CONTENT"/>
+        </div>
+        <div class="footer">
+            <tiles:insertAttribute name="FOOTER"/>
+        </div>
     </body>
 </html>

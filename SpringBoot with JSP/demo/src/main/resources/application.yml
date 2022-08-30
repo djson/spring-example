@@ -26,4 +26,12 @@ spring:
     # 정적 리소스 수정에도 재시작 없이 변경사항 적용
   devtools:
     livereload:
-    enabled: true
+      enabled: true
+
+mybatis:
+  mapper-locations: mybatis/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    return-instance-for-empty-row: true
+  type-aliases-package: com.sample.demo.data

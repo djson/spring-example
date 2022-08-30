@@ -7,8 +7,11 @@
 3. War 
 4. Java 8 Usage
 
-## Include Module
+## Include Library & Module
 
-1. TagLibrary
-2. Tiles
-3. H2 database
+1. H2 Database - For Sample Data
+2. Lombok
+3. Tiles
+4. TagLibrary
+5. MyBatis
+

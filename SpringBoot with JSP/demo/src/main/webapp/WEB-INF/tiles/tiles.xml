@@ -10,19 +10,4 @@
     <definition name="**.main.jsp" extends="main">
         <put-attribute name="CONTENT" value="{1}.jsp" />
     </definition>
-    <definition name="maMbr" template="/WEB-INF/views/layout/maMbr/layout.jsp">
-        <put-attribute name="HEADER" value="/WEB-INF/views/layout/maMbr/header.jsp" />
-        <put-attribute name="NAVIGATION" value="/WEB-INF/views/layout/maMbr/navigation.jsp" />
-        <put-attribute name="FOOTER" value="/WEB-INF/views/layout/maMbr/footer.jsp" />
-    </definition>
-    <!-- spring framework 에서는 jsp를 생략해도 됐는데. 여기서는 해줘야 해당 뷰를 찾는다 ...  -->
-    <definition name="**.maMbr.jsp" extends="maMbr">
-        <put-attribute name="CONTENT" value="{1}.jsp" />
-    </definition>
-    <definition name="message" template="/WEB-INF/views/layout/message/layout.jsp">
-    </definition>
-    <!-- spring framework 에서는 jsp를 생략해도 됐는데. 여기서는 해줘야 해당 뷰를 찾는다 ...  -->
-    <definition name="**.message.jsp" extends="message">
-        <put-attribute name="CONTENT" value="{1}.jsp" />
-    </definition>
 </tiles-definitions>
