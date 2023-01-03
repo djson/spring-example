@@ -1,5 +1,7 @@
 # spring-example
 
+- RTU Springboot
+    - sample project (ready to use)
 - AOP
     - LogAspect -> 메소드 실행 전/후로 로그를 남기기 위한 Log AOP 클래스
     - NoLogging -> Log AOP 에서 특정 클래스/메소드에 AOP 미적용하기 위한 어노테이션 클래스
@@ -26,3 +28,5 @@
     - Web Client & Server Simple Template
 - Swagger
     - Swagger 3.0 & Spring Boot 2.7.1 Gradle Sample
+- MSA Architechture Sample
+    - demo project to practice MSA Arch.
